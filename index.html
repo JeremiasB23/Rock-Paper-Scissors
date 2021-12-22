@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+let element = Math.random()*3 ;
+let element2 = Math.random()*3 ;
+
+function Roll(object){
+
+if(object >= 2){
+    return "Rock";
+}else if(object >= 1){
+    return "Paper";
+}else if(object >= 0){
+    return "Scissors";
+}  
+}
+
+function CheckWinner(Play1, Play2){
+
+    if(Play1 === Play2){
+        return "Empate";
+    }else if(Play1 === "Rock" && Play2 === "Paper"){
+        return "Player2 Wins!"
+    }else if(Play1 === "Paper" && Play2 === "Rock"){
+        return "Player1 Wins"
+    }else if(Play1 === "Rock" && Play2 === "Scissors"){
+        return "Player1 Wins"
+    }else if(Play1 === "Scissors" && Play2 === "Rock"){
+        return "Player2 Wins"
+    }else if(Play1 === "Scissors" && Play2 === "Paper"){
+        return "Player1 Wins"
+    }else if(Play1 === "Paper" && Play2 === "Scissors"){
+        return "Player2 Wins"
+    }
+
+}
+
+let Player1 = Roll(element);
+let Player2 = Roll(element2);
+console.log("Player 1: " + Player1);
+console.log("Player 2: " + Player2);
+console.log(CheckWinner(Player1, Player2));
+
+</script>
+    
+</body>
+</html>
