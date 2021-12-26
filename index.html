@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ROCK-PAPER-SCISSORS</title>
 </head>
 <body>
 
 <script>
 
-let element = Math.random()*3 ;
+let element = Number(window.prompt("Choose Rock(2)-Paper(1)-Scissors(0)"));
+
 let element2 = Math.random()*3 ;
 
 function Roll(object){
@@ -24,31 +25,75 @@ if(object >= 2){
 }  
 }
 
+let player1Score = 0;
+let player2Score = 0;
+
 function CheckWinner(Play1, Play2){
 
     if(Play1 === Play2){
-        return "Empate";
+        console.log("Draw");
+        return "Draw";
+
     }else if(Play1 === "Rock" && Play2 === "Paper"){
-        return "Player2 Wins!"
+        console.log("Player2 Wins!");
+        return player2Score++;
+
     }else if(Play1 === "Paper" && Play2 === "Rock"){
-        return "Player1 Wins"
+        console.log("Player1 Wins!");
+        return player1Score++;
+
     }else if(Play1 === "Rock" && Play2 === "Scissors"){
-        return "Player1 Wins"
+        console.log("Player1 Wins!");
+        return player1Score++;
+
     }else if(Play1 === "Scissors" && Play2 === "Rock"){
-        return "Player2 Wins"
+        console.log("Player2 Wins!");
+        return player2Score++;
+
     }else if(Play1 === "Scissors" && Play2 === "Paper"){
-        return "Player1 Wins"
+        console.log("Player1 Wins!");
+        return player1Score++;
+
     }else if(Play1 === "Paper" && Play2 === "Scissors"){
-        return "Player2 Wins"
+        console.log("Player2 Wins!");
+        return player2Score++;
     }
 
+}
+
+function winner(){
+
+    for(let i = 0; i <= 4; i++){
+        CheckWinner(Player1, Player2);
+        if(i <= 3){
+            
+            let element = Number(window.prompt("Choose Rock(2)-Paper(1)-Scissors(0)"));
+            let element2 = Math.random()*3 ;
+            Player1 = Roll(element);
+            Player2 = Roll(element2);
+            console.log("---------------------------------------------------");
+            console.log("Player 1: " + Player1);
+            console.log("Player 2: " + Player2);
+        }
+        
+    }
+
+    if(player2Score > player1Score){
+        console.log("---------------------------------------------------");
+        return "THE FINAL SCORE IS: "+ player1Score +"-"+ player2Score + " PLAYER 2 IS THE WINNER";
+    }else if(player1Score > player2Score){
+        console.log("---------------------------------------------------");
+        return "THE FINAL SCORE IS: "+ player1Score +"-"+player2Score + " PLAYER 1 IS THE WINNER";
+    }else if(player1Score === player2Score){
+        return "THE GAME FINISHED WITH A DRAW";
+    }
 }
 
 let Player1 = Roll(element);
 let Player2 = Roll(element2);
 console.log("Player 1: " + Player1);
 console.log("Player 2: " + Player2);
-console.log(CheckWinner(Player1, Player2));
+console.log(winner());
 
 </script>
     
