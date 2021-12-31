@@ -8,92 +8,180 @@
 </head>
 <body>
 
+<button class="selectionPress">Paper</button>
+<button class="selectionPress2">Rock</button>
+<button class="selectionPress3">Scissors</button>
+<div>THE RESULT WILL BE HERE:</div>
+<div class="result"></div><br>
+
+
+<!--*Falta agregar que se muestre el resultado de quien gana y quien pierde-->
 <script>
 
-let element = Number(window.prompt("Choose Rock(2)-Paper(1)-Scissors(0)"));
+let element = 0; 
+let element2 = 0; 
+let Player1 = element;
+let Player2 = Roll(element2);
+let player1Score = 0;
+let player2Score = 0;
 
-let element2 = Math.random()*3 ;
+const selectionPress = document.querySelector('.selectionPress');
+const selectionPress2 = document.querySelector('.selectionPress2');
+const selectionPress3 = document.querySelector('.selectionPress3');
+
+function Display(){
+      
+   const result = document.querySelector(".result");
+
+   const resultTaker = document.createTextNode(Player1 + "-");//Takes the chosed element by the player and shows it
+   const resultTaker2 = document.createTextNode(Player2+": ");//Takes the generated element of the player 2 and shows it
+   const resultTaker3 = document.createTextNode(CheckWinner(Player1, Player2)+ " ");
+   const resultTaker4 = document.createTextNode(winner());
+   result.appendChild(resultTaker);//No sé que significa pero basicamente esto muestra
+   result.appendChild(resultTaker2);//el resultado en pantalla
+   result.appendChild(resultTaker3);//el resultado en pantalla
+   result.appendChild(resultTaker4);//el resultado en pantalla
+}
+
+
+function Chose(){
+
+selectionPress.addEventListener('click', function(){
+
+this.style.color = "red";
+element = "Paper";
+//!A LA PIEDRA, PAPEL y TIJERA YA LA ESTOY PASANDO YO asi que aplicarle el roll() es innecesario.
+element2 = Math.random()*3 ;
+Player1 = element;
+Player2 = Roll(element2);
+
+Display();//DISPLAY THE TEXT IN SCREEN
+
+console.log(Player1);
+console.log(Player2);
+});
+
+selectionPress2.addEventListener('click', function(){
+
+this.style.color = "blue";
+element = "Rock";
+element2 = Math.random()*3 ;
+Player1 = element;
+Player2 = Roll(element2);
+
+Display();//DISPLAY THE TEXT IN SCREEN
+
+console.log(Player1);
+console.log(Player2);
+});
+
+selectionPress3.addEventListener('click', function(){
+
+this.style.color = "green";
+element = "Scissors";
+element2 = Math.random()*3 ;
+Player1 = element;
+Player2 = Roll(element2);
+
+Display();//DISPLAY THE TEXT IN SCREEN
+
+console.log(Player1);
+console.log(Player2);
+});
+
+}
 
 function Roll(object){
 
-if(object >= 2){
-    return "Rock";
-}else if(object >= 1){
-    return "Paper";
-}else if(object >= 0){
-    return "Scissors";
+ if(object >= 2){
+     
+     return "Rock";
+ }else if(object >= 1){
+    
+     return "Paper";
+ }else if(object >= 0){
+    
+     return "Scissors";
 }  
 }
 
-let player1Score = 0;
-let player2Score = 0;
+
 
 function CheckWinner(Play1, Play2){
 
     if(Play1 === Play2){
-        console.log("Draw");
-        return "Draw";
+        
+        console.log("---[Draw]---");
+        console.log("---------------------------------------------------");
+        return "DRAW";
 
     }else if(Play1 === "Rock" && Play2 === "Paper"){
         console.log("Player2 Wins!");
-        return player2Score++;
+        console.log("---------------------------------------------------");
+        player2Score++;
+        return "Player2 Wins!";
 
     }else if(Play1 === "Paper" && Play2 === "Rock"){
         console.log("Player1 Wins!");
-        return player1Score++;
+        console.log("---------------------------------------------------");
+        player1Score++;
+        return "Player1 Wins!";
 
     }else if(Play1 === "Rock" && Play2 === "Scissors"){
         console.log("Player1 Wins!");
-        return player1Score++;
+        console.log("---------------------------------------------------");
+        player1Score++;
+        return "Player1 Wins!";
 
     }else if(Play1 === "Scissors" && Play2 === "Rock"){
         console.log("Player2 Wins!");
-        return player2Score++;
+        console.log("---------------------------------------------------");
+        player2Score++;
+        return "Player2 Wins!";
 
     }else if(Play1 === "Scissors" && Play2 === "Paper"){
         console.log("Player1 Wins!");
-        return player1Score++;
+        console.log("---------------------------------------------------");
+        player1Score++;
+        return "Player1 Wins!";
 
     }else if(Play1 === "Paper" && Play2 === "Scissors"){
         console.log("Player2 Wins!");
-        return player2Score++;
+        console.log("---------------------------------------------------");
+        player2Score++;
+        return "Player2 Wins!";
     }
 
 }
 
 function winner(){
 
-    for(let i = 0; i <= 4; i++){
-        CheckWinner(Player1, Player2);
-        if(i <= 3){
-            
-            let element = Number(window.prompt("Choose Rock(2)-Paper(1)-Scissors(0)"));
-            let element2 = Math.random()*3 ;
-            Player1 = Roll(element);
-            Player2 = Roll(element2);
-            console.log("---------------------------------------------------");
-            console.log("Player 1: " + Player1);
-            console.log("Player 2: " + Player2);
-        }
-        
-    }
-
-    if(player2Score > player1Score){
+     console.log(player1Score + "-" + player2Score);
+    if(player2Score === 3){
         console.log("---------------------------------------------------");
-        return "THE FINAL SCORE IS: "+ player1Score +"-"+ player2Score + " PLAYER 2 IS THE WINNER";
-    }else if(player1Score > player2Score){
+        console.log("THE FINAL SCORE IS: "+ player1Score +"-"+ player2Score + " PLAYER 2 IS THE WINNER");
         console.log("---------------------------------------------------");
-        return "THE FINAL SCORE IS: "+ player1Score +"-"+player2Score + " PLAYER 1 IS THE WINNER";
-    }else if(player1Score === player2Score){
-        return "THE GAME FINISHED WITH A DRAW";
+        return ("THE FINAL SCORE IS: "+ player1Score +"-"+ player2Score + " PLAYER 2 IS THE WINNER");
+    }else if(player1Score === 3){
+        console.log("---------------------------------------------------");
+        console.log("THE FINAL SCORE IS: "+ player1Score +"-"+player2Score + " PLAYER 1 IS THE WINNER");
+        console.log("---------------------------------------------------");
+        return ("THE FINAL SCORE IS: "+ player1Score +"-"+player2Score + " PLAYER 1 IS THE WINNER");
+    }else{
+        return "";
     }
+    
+    
 }
 
-let Player1 = Roll(element);
-let Player2 = Roll(element2);
-console.log("Player 1: " + Player1);
-console.log("Player 2: " + Player2);
-console.log(winner());
+Chose();
+
+// let Player1 = Roll(element);
+// let Player2 = Roll(element2);
+// console.log("Player 1: " + Player1);
+// console.log("Player 2: " + Player2);
+// console.log(winner());
+
 
 </script>
     
