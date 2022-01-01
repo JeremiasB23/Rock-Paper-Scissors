@@ -1,100 +1,115 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(41, 35, 35);
-    color: white;
+body {
+  background-color: rgb(41, 35, 35);
+  color: white;
 }
 
-.bossDialogue{
-    background-color: white;
-    color: black;
-    width: 70%;
-    margin-left: -50px;
-    margin-top: 55px;
-    height: 150px;
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.bossDialogue {
+  background-color: white;
+  color: black;
+  width: 70%;
+  margin-left: -50px;
+  margin-top: 55px;
+  height: 150px;
+  font-family: "Press Start 2P";
+  font-size: 15px;
+  padding: 5px;
 }
 
-.bossFlexbox{
+.bossFlexbox {
   display: flex;
   flex-direction: column;
 }
 
-.bossChilds{
-   display: flex;
-   flex-direction: row;
+.bossChilds {
+  display: flex;
+  flex-direction: row;
 }
 
 //!ENEMY HEALTH BAR
 
-.healthBar{
-    background-color: red;
-    height: 15px;
-    width: 200px;
-    margin-top: -110px;
-    margin-left: 25px;
+.healthBar {
+  background-color: red;
+  height: 15px;
+  width: 200px;
+  margin-top: -110px;
+  margin-left: 25px;
 }
 
-.healthBarHpLose1{
-    background-color: red;
-    height: 15px;
-    width: 133.333333333px;
-    margin-top: -110px;
-    margin-left: 25px;
+.healthBarHpLose1 {
+  background-color: red;
+  height: 15px;
+  width: 133.333333333px;
+  margin-top: -110px;
+  margin-left: 25px;
 }
 
-.healthBarHpLose2{
-    background-color: red;
-    height: 15px;
-    width: 66.6666666667px;
-    margin-top: -110px;
-    margin-left: 25px;
+.healthBarHpLose2 {
+  background-color: red;
+  height: 15px;
+  width: 66.6666666667px;
+  margin-top: -110px;
+  margin-left: 25px;
 }
 
-.healthBarDie{
-    background-color: red;
-    height: 15px;
-    width: 0px;
-    margin-top: -110px;
-    margin-left: 25px;
+.healthBarDie {
+  background-color: red;
+  height: 15px;
+  width: 0px;
+  margin-top: -110px;
+  margin-left: 25px;
 }
 
 //!PLAYER HEALTH BAR
 
-.alignHealth{
-    display: flex;
-    justify-content: center;
+.alignHealth {
+  display: flex;
+  justify-content: center;
 }
 
-.UserhealthBar{
-    
-    background-color: red;
-    height: 15px;
-    width: 200px;
-    margin-top: 10px;
-    
+.UserhealthBar {
+  background-color: red;
+  height: 15px;
+  width: 200px;
+  margin-top: 10px;
 }
 
+.UserhealthBarHpLose1 {
+  background-color: red;
+  height: 15px;
+  width: 133.333333333px;
+  margin-top: 10px;
+}
+
+.UserhealthBarHpLose2 {
+  background-color: red;
+  height: 15px;
+  width: 66.6666666667px;
+  margin-top: 10px;
+}
+
+.UserhealthBarDie {
+  background-color: red;
+  height: 15px;
+  width: 0px;
+  margin-top: 10px;
+}
 
 //*This upper section is the style of the boss, the texts, healthBar, etc
 
-.imageSizes{
-
-    width: 150px;
-    height: 150px;
+.imageSizes {
+  width: 150px;
+  height: 150px;
 }
 
-.flexOptions{
-    display: flex;
-    justify-content: space-around;
+.flexOptions {
+  display: flex;
+  justify-content: space-around;
 }
-
-
-
-
-
-
-

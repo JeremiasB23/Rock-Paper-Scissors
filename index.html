@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK-PAPER-SCISSORS</title>
     <link rel="stylesheet" href="./styles/style.css">
+    
+
 </head>
 <body>
 
@@ -13,7 +15,7 @@
 
     <div class="bossChilds">
         <img src="./Images/Monster.png" alt="">
-        <h1 class="bossDialogue">hello</h1>
+        <h1 class="bossDialogue">hello welcome to the game</h1>
     </div>
 
 </div>
@@ -34,6 +36,7 @@
 <div class="alignHealth">
     <div class="UserhealthBar"></div>
 </div>
+
 
 
 <br><br><br><br><br><!--Just provisory-->
@@ -76,6 +79,7 @@ function mainGameMechanichs(){
        const resultTaker2 = document.createTextNode(Player2+": ");//Takes the generated element of the player 2 and shows it
        const resultTaker3 = document.createTextNode(CheckWinner(Player1, Player2)+ " ");
        healLost(enemyLife);
+       UserhealLost(userLife);
        const resultTaker4 = document.createTextNode(winner());
        result.appendChild(resultTaker);//No sé que significa pero basicamente esto muestra
        result.appendChild(resultTaker2);//el resultado en pantalla
@@ -207,6 +211,17 @@ function mainGameMechanichs(){
         heal.classList.add("healthBarHpLose2");
        }else if(enemyLifes === 0){
         heal.classList.add("healthBarDie");
+       }
+    }
+
+    function UserhealLost(userLifes){//LOWER THE PLAYER LIFE IF HE LOSE
+        const Userhealth = document.querySelector(".UserhealthBar");
+       if(userLifes === 2){
+        Userhealth.classList.add("UserhealthBarHpLose1");   
+       }else if(userLifes === 1){
+        Userhealth.classList.add("UserhealthBarHpLose2");
+       }else if(userLifes === 0){
+        Userhealth.classList.add("UserhealthBarDie");
        }
     }
     
