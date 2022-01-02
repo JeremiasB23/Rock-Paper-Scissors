@@ -15,7 +15,8 @@
 
     <div class="bossChilds">
         <img src="./Images/Monster.png" alt="">
-        <h1 class="bossDialogue">hello welcome to the game</h1>
+        <h1 class="bossDialogue"><!--!I'm supposed to add boss text here-->
+        <div class="result"></div></h1><!--*Muestra el resultado de las partidas-->
     </div>
 
 </div>
@@ -42,8 +43,6 @@
 <br><br><br><br><br><!--Just provisory-->
 
 
-<div>THE RESULT WILL BE HERE:</div>
-<div class="result"></div><br>
 
 
 
@@ -81,10 +80,16 @@ function mainGameMechanichs(){
        healLost(enemyLife);
        UserhealLost(userLife);
        const resultTaker4 = document.createTextNode(winner());
-       result.appendChild(resultTaker);//No sé que significa pero basicamente esto muestra
-       result.appendChild(resultTaker2);//el resultado en pantalla
-       result.appendChild(resultTaker3);//el resultado en pantalla
-       result.appendChild(resultTaker4);//el resultado en pantalla
+
+       const newLi = document.createElement("LI");//Usamos esto para crear LI
+       newLi.appendChild(resultTaker);
+       newLi.appendChild(resultTaker2);
+       newLi.appendChild(resultTaker3);
+       newLi.appendChild(resultTaker4);
+       result.appendChild(newLi);//No sé que significa pero basicamente esto muestra
+       result.appendChild(newLi);//el resultado en pantalla
+       result.appendChild(newLi);//el resultado en pantalla
+       result.appendChild(newLi);//el resultado en pantalla
     }
     
     

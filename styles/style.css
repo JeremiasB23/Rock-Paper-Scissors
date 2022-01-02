@@ -38,6 +38,7 @@ body {
   width: 200px;
   margin-top: -110px;
   margin-left: 25px;
+  transition: width 2s;
 }
 
 .healthBarHpLose1 {
@@ -74,6 +75,7 @@ body {
   height: 15px;
   width: 200px;
   margin-top: 10px;
+  transition: width 2s;
 }
 
 .UserhealthBarHpLose1 {
